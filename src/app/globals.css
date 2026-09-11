@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Hanken Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Proyecto MelaDos brand palette */
+  --pn-teal: #65bec2;
+  --pn-green: #00973a;
+  --pn-lime: #70b839;
+  --pn-aqua: #74d8c2;
+  --pn-blue: #00adef;
+  --pn-pink: #e96199;
+  --pn-purple: #4831B0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8f9fb;
+  color: #1e2a36;
+  min-height: 100vh;
+}
+
+/* Proyecto MelaDos Light Glass Cards */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.glass-panel-teal {
+  background: rgba(101, 190, 194, 0.08);
+  border: 1px solid rgba(101, 190, 194, 0.2);
+}
+
+.glass-panel-green {
+  background: rgba(0, 151, 58, 0.06);
+  border: 1px solid rgba(0, 151, 58, 0.2);
+}
+
+.glass-panel-lime {
+  background: rgba(112, 184, 57, 0.06);
+  border: 1px solid rgba(112, 184, 57, 0.2);
+}
+
+.glass-panel-pink {
+  background: rgba(233, 97, 153, 0.06);
+  border: 1px solid rgba(233, 97, 153, 0.2);
+}
+
+.glass-panel-blue {
+  background: rgba(0, 173, 239, 0.06);
+  border: 1px solid rgba(0, 173, 239, 0.2);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4cdd5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8898a6;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(101, 190, 194, 0.3);
+  color: #1e2a36;
+}

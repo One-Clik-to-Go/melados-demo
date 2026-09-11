@@ -1,0 +1,34 @@
+# Pro Niñez Panamá — App Repository Context
+
+> Title: Pro Niñez Panamá Longitudinal Early Childhood Impact Study Application
+> Stack: Next.js 14 (App Router, Standalone), TypeScript, Tailwind CSS, Firebase Admin SDK, IndexedDB PWA.
+> Target Deployment: Coolify PaaS on mel-vps (Docker).
+> Primary Sponsor: Fundación Banco General
+> Technical Implementation: One Clik To Go
+
+## Key Rules & Constraints
+1. LEY 285 PANAMA PRIVACY COMPLIANCE:
+   - Child PII (nombre_completo, cedula) MUST BE physically and logically decoupled from academic performance records (EGRA, EGMA, SDQ).
+   - Identity mapping MUST only happen via restricted `/api/admin/match-estudiante` route, enforcing `ADMIN` JWT role.
+   - Evaluator and Donor roles MUST NEVER receive unmasked student PII.
+
+2. OFFLINE-FIRST ARCHITECTURE:
+   - Field evaluations are saved locally to IndexedDB when network connection is unavailable.
+   - Pending evaluations are stored in `sync_queue` and ingested via `/api/evaluations/ingest` when online.
+
+3. TECH DOMAIN CONCEPTS:
+   - CET: Centro de Estimulación Temprana (Pro Niñez)
+   - EGRA: Early Grade Reading Assessment (sub-scores: letras, lectura oral, comprension, fluidez)
+   - EGMA: Early Grade Math Assessment (sub-scores: numeracion, conteo, operaciones, logica)
+   - SDQ: Strengths and Difficulties Questionnaire (socioemotional rating)
+
+4. DIRECTORY MAP:
+   - `/src/app/api/admin/match-estudiante/route.ts`: Admin PII resolution API
+   - `/src/app/api/evaluations/ingest/route.ts`: Evaluation batch ingestion API
+   - `/src/app/api/students/route.ts`: Anonymous student CRUD API
+   - `/src/app/api/dashboard/stats/route.ts`: Aggregated analytics API
+   - `/src/lib/firebase/admin.ts`: Firebase Admin SDK
+   - `/src/lib/firebase/db.ts`: Firestore helper queries & seed generator
+   - `/src/lib/offline/db.ts`: IndexedDB queue client
+   - `/src/lib/auth/rbac.ts`: Token & RBAC enforcement
+   - `/src/middleware.ts`: Next.js edge route protection middleware

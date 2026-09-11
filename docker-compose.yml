@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  proninez-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: proninez_panama_app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID:-proninez-ca117}
+      - FIREBASE_CLIENT_EMAIL=${FIREBASE_CLIENT_EMAIL}
+      - FIREBASE_PRIVATE_KEY=${FIREBASE_PRIVATE_KEY}
+      - JWT_SECRET=${JWT_SECRET}

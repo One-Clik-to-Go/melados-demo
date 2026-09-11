@@ -1,0 +1,16 @@
+node_modules
+.next
+.git
+*.log
+*.md
+.firebase
+firestore.rules
+firestore.indexes.json
+firebase.json
+docker-compose.yml
+docs
+scripts
+guia.html
+revision.html
+propuesta.html
+index.html

@@ -1,0 +1,61 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'andres@grupoplustech.com' ||
+        request.auth.token.role == 'ADMIN'
+      );
+    }
+
+    function isEvaluador() {
+      return isSignedIn() && (
+        request.auth.token.role == 'EVALUADOR' ||
+        request.auth.token.role == 'ADMIN'
+      );
+    }
+
+    // 1. Escuelas e Instituciones Educativas
+    match /escuelas/{escuelaId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    // 2. Estudiantes (Datos Académicos Anónimos)
+    match /estudiantes/{estudianteId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // 3. Identidad Protegida de Estudiantes (Ley 285 - PII)
+    match /estudiantes_identidad/{estudianteId} {
+      allow read, write: if isAdmin();
+    }
+
+    // 4. Evaluaciones EGRA
+    match /evaluaciones_egra/{evalId} {
+      allow read: if isSignedIn();
+      allow create, update: if true; // Allow field evaluator ingest
+      allow delete: if isAdmin();
+    }
+
+    // 5. Evaluaciones EGMA
+    match /evaluaciones_egma/{evalId} {
+      allow read: if isSignedIn();
+      allow create, update: if true; // Allow field evaluator ingest
+      allow delete: if isAdmin();
+    }
+
+    // 6. Usuarios y Permisos del Sistema
+    match /usuarios/{userId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+  }
+}
