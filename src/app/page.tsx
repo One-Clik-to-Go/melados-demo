@@ -227,9 +227,9 @@ export default function MelaDosPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans">
       {/* HEADER SECTION */}
-      <header className="bg-slate-950 border-b border-slate-800 py-6 px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow-md">
+      <header className="bg-white border-b border-slate-200 py-6 px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow-md">
         <div>
           <div className="flex items-center gap-2">
             <span className="bg-emerald-500 text-slate-950 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider">
@@ -238,10 +238,10 @@ export default function MelaDosPage() {
             <span className="text-slate-500 text-sm">/</span>
             <span className="text-slate-300 text-sm font-semibold">Proyecto MelaDos</span>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-white mt-1">
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 mt-1">
             MelaDos: Tablero de Estimulación Temprana 🐾
           </h1>
-          <p className="text-slate-400 text-sm mt-1">
+          <p className="text-slate-500 text-sm mt-1">
             Plataforma interactiva de auditoría, ingesta y evaluación longitudinal de impacto (CET Proyecto MelaDos)
           </p>
         </div>
@@ -254,25 +254,25 @@ export default function MelaDosPage() {
               setFilterRango('todos');
               setSearchTerm('');
             }}
-            className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm transition font-medium"
+            className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm transition font-medium"
           >
             <RefreshCw className="h-4 w-4" />
             Reiniciar Filtros
           </button>
           <a
-            href="https://grupoplustech.com"
+            href="https://onecliktogo.com"
             target="_blank"
-            className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm transition font-semibold shadow-md shadow-emerald-900/20"
+            className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg text-sm transition font-semibold shadow-md shadow-emerald-900/20"
           >
             <ShieldCheck className="h-4 w-4" />
-            Plus Tech
+            One Clik To Go
           </a>
         </div>
       </header>
 
       {/* FILTER PANEL */}
-      <section className="bg-slate-950/50 border-b border-slate-800/60 p-4 px-8 flex flex-wrap items-center gap-4">
-        <div className="flex items-center gap-2 text-slate-400 text-xs font-bold uppercase tracking-wider">
+      <section className="bg-slate-50 border-b border-slate-200 p-4 px-8 flex flex-wrap items-center gap-4">
+        <div className="flex items-center gap-2 text-slate-500 text-xs font-bold uppercase tracking-wider">
           <Filter className="h-4 w-4 text-emerald-500" />
           Filtros de Datos:
         </div>
@@ -282,7 +282,7 @@ export default function MelaDosPage() {
           <select
             value={filterCet}
             onChange={(e) => setFilterCet(e.target.value)}
-            className="bg-slate-800 text-slate-200 rounded-lg px-3 py-1.5 text-sm border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="bg-white text-slate-700 rounded-lg px-3 py-1.5 text-sm border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
           >
             <option value="todos">Todos los Centros (CET)</option>
             <option value="El Bale">Tío Freddy (El Bale)</option>
@@ -298,7 +298,7 @@ export default function MelaDosPage() {
           <select
             value={filterSexo}
             onChange={(e) => setFilterSexo(e.target.value)}
-            className="bg-slate-800 text-slate-200 rounded-lg px-3 py-1.5 text-sm border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="bg-white text-slate-700 rounded-lg px-3 py-1.5 text-sm border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
           >
             <option value="todos">Cualquier Sexo</option>
             <option value="Femenino">Femenino (Niñas)</option>
@@ -311,7 +311,7 @@ export default function MelaDosPage() {
           <select
             value={filterRango}
             onChange={(e) => setFilterRango(e.target.value)}
-            className="bg-slate-800 text-slate-200 rounded-lg px-3 py-1.5 text-sm border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="bg-white text-slate-700 rounded-lg px-3 py-1.5 text-sm border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
           >
             <option value="todos">Último Rango: Todos</option>
             <option value="Alto">Último Rango: Alto 🟢</option>
@@ -329,19 +329,19 @@ export default function MelaDosPage() {
             placeholder="Buscar por Nombre, Cédula o Estimuladora..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-slate-800 text-slate-200 rounded-lg pl-10 pr-4 py-1.5 text-sm border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder-slate-500"
+            className="w-full bg-white text-slate-700 rounded-lg pl-10 pr-4 py-1.5 text-sm border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-slate-400"
           />
         </div>
       </section>
 
       {/* TABS NAVIGATION */}
-      <nav className="bg-slate-950 flex border-b border-slate-800/80 px-8">
+      <nav className="bg-white flex border-b border-slate-200 px-8">
         <button
           onClick={() => setActiveTab('dashboard')}
           className={`py-4 px-6 text-sm font-semibold border-b-2 transition ${
             activeTab === 'dashboard' 
-              ? 'border-emerald-500 text-white bg-slate-900/40' 
-              : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-900/10'
+              ? 'border-teal-600 text-teal-700 bg-teal-50' 
+              : 'border-transparent text-slate-500 hover:text-slate-900 hover:bg-slate-50'
           }`}
         >
           <div className="flex items-center gap-2">
@@ -353,8 +353,8 @@ export default function MelaDosPage() {
           onClick={() => setActiveTab('explorador')}
           className={`py-4 px-6 text-sm font-semibold border-b-2 transition ${
             activeTab === 'explorador' 
-              ? 'border-emerald-500 text-white bg-slate-900/40' 
-              : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-900/10'
+              ? 'border-teal-600 text-teal-700 bg-teal-50' 
+              : 'border-transparent text-slate-500 hover:text-slate-900 hover:bg-slate-50'
           }`}
         >
           <div className="flex items-center gap-2">
@@ -366,8 +366,8 @@ export default function MelaDosPage() {
           onClick={() => setActiveTab('importador')}
           className={`py-4 px-6 text-sm font-semibold border-b-2 transition ${
             activeTab === 'importador' 
-              ? 'border-emerald-500 text-white bg-slate-900/40' 
-              : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-900/10'
+              ? 'border-teal-600 text-teal-700 bg-teal-50' 
+              : 'border-transparent text-slate-500 hover:text-slate-900 hover:bg-slate-50'
           }`}
         >
           <div className="flex items-center gap-2">
@@ -379,8 +379,8 @@ export default function MelaDosPage() {
           onClick={() => setActiveTab('docs')}
           className={`py-4 px-6 text-sm font-semibold border-b-2 transition ${
             activeTab === 'docs' 
-              ? 'border-emerald-500 text-white bg-slate-900/40' 
-              : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-900/10'
+              ? 'border-teal-600 text-teal-700 bg-teal-50' 
+              : 'border-transparent text-slate-500 hover:text-slate-900 hover:bg-slate-50'
           }`}
         >
           <div className="flex items-center gap-2">
@@ -397,25 +397,25 @@ export default function MelaDosPage() {
         {activeTab === 'dashboard' && (
           <div className="space-y-8 animate-fadeIn">
             {/* ALERT BOX: EXCEL HEALTH REPORT */}
-            <div className="bg-amber-950/20 border border-amber-900/60 rounded-xl p-5 flex flex-col md:flex-row items-start gap-4">
-              <div className="bg-amber-900/40 p-3 rounded-lg text-amber-400 shrink-0">
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 flex flex-col md:flex-row items-start gap-4">
+              <div className="bg-amber-100 p-3 rounded-lg text-amber-600 shrink-0">
                 <AlertTriangle className="h-6 w-6" />
               </div>
               <div>
-                <h4 className="text-amber-300 font-bold text-lg">
+                <h4 className="text-amber-800 font-bold text-lg">
                   Reporte de Salud del Origen de Datos (Auditoría Excel)
                 </h4>
-                <p className="text-amber-200/80 text-sm mt-1 leading-relaxed">
+                <p className="text-amber-700/90 text-sm mt-1 leading-relaxed">
                   Los archivos Excel de campo contienen <strong>32 registros con datos desplazados</strong> (como fechas serializadas e enteros como <code className="bg-amber-950 px-1 rounded font-mono">44804</code> o scores ingresados directamente en el rango cualitativo) y <strong>decenas de fórmulas rotas #REF!</strong> en sus pestañas de reporte agregadas. El presente dashboard limpia y normaliza el 100% de estas anomalías en caliente.
                 </p>
                 <div className="flex flex-wrap gap-2 mt-3">
-                  <span className="bg-amber-950/80 border border-amber-800 px-2 py-0.5 rounded text-xs text-amber-300 font-mono">
+                  <span className="bg-amber-100 border border-amber-300 px-2 py-0.5 rounded text-xs text-amber-800 font-mono">
                     Fórmulas #REF! reparadas: 24
                   </span>
-                  <span className="bg-amber-950/80 border border-amber-800 px-2 py-0.5 rounded text-xs text-amber-300 font-mono">
+                  <span className="bg-amber-100 border border-amber-300 px-2 py-0.5 rounded text-xs text-amber-800 font-mono">
                     Columnas desplazadas corregidas: 32
                   </span>
-                  <span className="bg-amber-950/80 border border-amber-800 px-2 py-0.5 rounded text-xs text-amber-300 font-mono">
+                  <span className="bg-amber-100 border border-amber-300 px-2 py-0.5 rounded text-xs text-amber-800 font-mono">
                     Registros Ley 285 anonimizados: 150
                   </span>
                 </div>
@@ -425,21 +425,21 @@ export default function MelaDosPage() {
             {/* KPI STATS CARDS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Card 1: Total Children */}
-              <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-6 shadow-md">
+              <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
                 <div className="flex justify-between items-start">
                   <div>
-                    <p className="text-slate-400 text-xs font-bold uppercase tracking-wider">
+                    <p className="text-slate-500 text-xs font-bold uppercase tracking-wider">
                       Niños Evaluados
                     </p>
-                    <h3 className="text-3xl font-extrabold text-white mt-2">
+                    <h3 className="text-3xl font-extrabold text-slate-900 mt-2">
                       {stats.total}
                     </h3>
                   </div>
-                  <div className="bg-emerald-500/10 text-emerald-400 p-2.5 rounded-lg">
+                  <div className="bg-emerald-100 text-emerald-600 p-2.5 rounded-lg">
                     <Users className="h-5 w-5" />
                   </div>
                 </div>
-                <div className="mt-4 flex items-center gap-2 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+                <div className="mt-4 flex items-center gap-2 text-xs text-slate-400 border-t border-slate-200 pt-3">
                   <span className="text-emerald-400 font-semibold">{stats.niñas} Niñas</span>
                   <span>•</span>
                   <span className="text-blue-400 font-semibold">{stats.niños} Niños</span>
@@ -447,61 +447,61 @@ export default function MelaDosPage() {
               </div>
 
               {/* Card 2: Total Evaluations */}
-              <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-6 shadow-md">
+              <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
                 <div className="flex justify-between items-start">
                   <div>
-                    <p className="text-slate-400 text-xs font-bold uppercase tracking-wider">
+                    <p className="text-slate-500 text-xs font-bold uppercase tracking-wider">
                       Evaluaciones Acumuladas
                     </p>
-                    <h3 className="text-3xl font-extrabold text-white mt-2">
+                    <h3 className="text-3xl font-extrabold text-slate-900 mt-2">
                       {stats.totalEvals}
                     </h3>
                   </div>
-                  <div className="bg-blue-500/10 text-blue-400 p-2.5 rounded-lg">
+                  <div className="bg-blue-100 text-blue-600 p-2.5 rounded-lg">
                     <FileSpreadsheet className="h-5 w-5" />
                   </div>
                 </div>
-                <div className="mt-4 flex items-center gap-2 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+                <div className="mt-4 flex items-center gap-2 text-xs text-slate-400 border-t border-slate-200 pt-3">
                   <span>Ciclo completo: {stats.completionDistribution['4 evals']} niños con 4 evals</span>
                 </div>
               </div>
 
               {/* Card 3: Avg Score */}
-              <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-6 shadow-md">
+              <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
                 <div className="flex justify-between items-start">
                   <div>
-                    <p className="text-slate-400 text-xs font-bold uppercase tracking-wider">
+                    <p className="text-slate-500 text-xs font-bold uppercase tracking-wider">
                       Puntaje de Desarrollo Promedio
                     </p>
-                    <h3 className="text-3xl font-extrabold text-white mt-2">
+                    <h3 className="text-3xl font-extrabold text-slate-900 mt-2">
                       {stats.avgLatestScore} pts
                     </h3>
                   </div>
-                  <div className="bg-purple-500/10 text-purple-400 p-2.5 rounded-lg">
+                  <div className="bg-purple-100 text-purple-600 p-2.5 rounded-lg">
                     <TrendingUp className="h-5 w-5" />
                   </div>
                 </div>
-                <div className="mt-4 flex items-center gap-2 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+                <div className="mt-4 flex items-center gap-2 text-xs text-slate-400 border-t border-slate-200 pt-3">
                   <span>Último corte trimestral del programa</span>
                 </div>
               </div>
 
               {/* Card 4: Centers Active */}
-              <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-6 shadow-md">
+              <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
                 <div className="flex justify-between items-start">
                   <div>
-                    <p className="text-slate-400 text-xs font-bold uppercase tracking-wider">
+                    <p className="text-slate-500 text-xs font-bold uppercase tracking-wider">
                       Centros Activos (CET)
                     </p>
-                    <h3 className="text-3xl font-extrabold text-white mt-2">
+                    <h3 className="text-3xl font-extrabold text-slate-900 mt-2">
                       5
                     </h3>
                   </div>
-                  <div className="bg-amber-500/10 text-amber-400 p-2.5 rounded-lg">
+                  <div className="bg-amber-500/10 text-amber-600 p-2.5 rounded-lg">
                     <MapPin className="h-5 w-5" />
                   </div>
                 </div>
-                <div className="mt-4 flex items-center gap-2 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+                <div className="mt-4 flex items-center gap-2 text-xs text-slate-400 border-t border-slate-200 pt-3">
                   <span>Burunga, Cañazas, El Bale, Juan Díaz, Los Valles</span>
                 </div>
               </div>
@@ -511,8 +511,8 @@ export default function MelaDosPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               
               {/* Distribution of Rangos (Custom Pure CSS Chart) */}
-              <div className="bg-slate-950/40 border border-slate-800 rounded-xl p-6 shadow-md flex flex-col">
-                <h4 className="text-slate-200 font-bold text-lg border-b border-slate-800 pb-3">
+              <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col">
+                <h4 className="text-slate-900 font-bold text-lg border-b border-slate-200 pb-3">
                   Distribución Cualitativa de Desarrollo (Último Registro)
                 </h4>
                 <div className="mt-6 space-y-5 flex-1 flex flex-col justify-center">
@@ -526,7 +526,7 @@ export default function MelaDosPage() {
                       </span>
                       <span>{stats.rangeDistribution['Alto']} niños ({stats.total > 0 ? Math.round((stats.rangeDistribution['Alto'] / stats.total) * 100) : 0}%)</span>
                     </div>
-                    <div className="w-full bg-slate-800 h-3.5 rounded-full overflow-hidden">
+                    <div className="w-full bg-slate-200 h-3.5 rounded-full overflow-hidden">
                       <div 
                         className="bg-gradient-to-r from-emerald-600 to-emerald-400 h-full rounded-full transition-all duration-1000" 
                         style={{ width: `${stats.total > 0 ? (stats.rangeDistribution['Alto'] / stats.total) * 100 : 0}%` }}
@@ -543,7 +543,7 @@ export default function MelaDosPage() {
                       </span>
                       <span>{stats.rangeDistribution['Normal']} niños ({stats.total > 0 ? Math.round((stats.rangeDistribution['Normal'] / stats.total) * 100) : 0}%)</span>
                     </div>
-                    <div className="w-full bg-slate-800 h-3.5 rounded-full overflow-hidden">
+                    <div className="w-full bg-slate-200 h-3.5 rounded-full overflow-hidden">
                       <div 
                         className="bg-gradient-to-r from-blue-600 to-blue-400 h-full rounded-full transition-all duration-1000" 
                         style={{ width: `${stats.total > 0 ? (stats.rangeDistribution['Normal'] / stats.total) * 100 : 0}%` }}
@@ -554,13 +554,13 @@ export default function MelaDosPage() {
                   {/* AL LIMITE */}
                   <div>
                     <div className="flex justify-between text-xs font-bold mb-1">
-                      <span className="text-amber-400 flex items-center gap-1.5">
+                      <span className="text-amber-600 flex items-center gap-1.5">
                         <span className="inline-block h-2 w-2 rounded-full bg-amber-500"></span>
                         Al límite (Atención y Refuerzo)
                       </span>
                       <span>{stats.rangeDistribution['Al límite']} niños ({stats.total > 0 ? Math.round((stats.rangeDistribution['Al límite'] / stats.total) * 100) : 0}%)</span>
                     </div>
-                    <div className="w-full bg-slate-800 h-3.5 rounded-full overflow-hidden">
+                    <div className="w-full bg-slate-200 h-3.5 rounded-full overflow-hidden">
                       <div 
                         className="bg-gradient-to-r from-amber-600 to-amber-400 h-full rounded-full transition-all duration-1000" 
                         style={{ width: `${stats.total > 0 ? (stats.rangeDistribution['Al límite'] / stats.total) * 100 : 0}%` }}
@@ -577,7 +577,7 @@ export default function MelaDosPage() {
                       </span>
                       <span>{stats.rangeDistribution['Bajo']} niños ({stats.total > 0 ? Math.round((stats.rangeDistribution['Bajo'] / stats.total) * 100) : 0}%)</span>
                     </div>
-                    <div className="w-full bg-slate-800 h-3.5 rounded-full overflow-hidden">
+                    <div className="w-full bg-slate-200 h-3.5 rounded-full overflow-hidden">
                       <div 
                         className="bg-gradient-to-r from-red-600 to-red-400 h-full rounded-full transition-all duration-1000" 
                         style={{ width: `${stats.total > 0 ? (stats.rangeDistribution['Bajo'] / stats.total) * 100 : 0}%` }}
@@ -589,8 +589,8 @@ export default function MelaDosPage() {
               </div>
 
               {/* Longitudinal Progression Line Chart (Beautiful Interactive SVG) */}
-              <div className="bg-slate-950/40 border border-slate-800 rounded-xl p-6 shadow-md flex flex-col">
-                <h4 className="text-slate-200 font-bold text-lg border-b border-slate-800 pb-3">
+              <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col">
+                <h4 className="text-slate-900 font-bold text-lg border-b border-slate-200 pb-3">
                   Trayectoria Longitudinal: Puntuación de Desarrollo por Trimestre
                 </h4>
                 
@@ -601,14 +601,14 @@ export default function MelaDosPage() {
                     {/* SVG Line */}
                     <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none">
                       {/* Grid lines */}
-                      <line x1="12.5%" y1="0%" x2="12.5%" y2="100%" stroke="#1e293b" strokeDasharray="4" />
-                      <line x1="37.5%" y1="0%" x2="37.5%" y2="100%" stroke="#1e293b" strokeDasharray="4" />
-                      <line x1="62.5%" y1="0%" x2="62.5%" y2="100%" stroke="#1e293b" strokeDasharray="4" />
-                      <line x1="87.5%" y1="0%" x2="87.5%" y2="100%" stroke="#1e293b" strokeDasharray="4" />
+                      <line x1="12.5%" y1="0%" x2="12.5%" y2="100%" stroke="#e2e8f0" strokeDasharray="4" />
+                      <line x1="37.5%" y1="0%" x2="37.5%" y2="100%" stroke="#e2e8f0" strokeDasharray="4" />
+                      <line x1="62.5%" y1="0%" x2="62.5%" y2="100%" stroke="#e2e8f0" strokeDasharray="4" />
+                      <line x1="87.5%" y1="0%" x2="87.5%" y2="100%" stroke="#e2e8f0" strokeDasharray="4" />
 
-                      <line x1="0%" y1="25%" x2="100%" y2="25%" stroke="#1e293b" strokeWidth="0.5" />
-                      <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="#1e293b" strokeWidth="0.5" />
-                      <line x1="0%" y1="75%" x2="100%" y2="75%" stroke="#1e293b" strokeWidth="0.5" />
+                      <line x1="0%" y1="25%" x2="100%" y2="25%" stroke="#e2e8f0" strokeWidth="0.5" />
+                      <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="#e2e8f0" strokeWidth="0.5" />
+                      <line x1="0%" y1="75%" x2="100%" y2="75%" stroke="#e2e8f0" strokeWidth="0.5" />
 
                       {/* Line Plot */}
                       {progressionData[0] > 0 && progressionData[1] > 0 && (
@@ -640,17 +640,17 @@ export default function MelaDosPage() {
                             transform: 'translateX(-50%)'
                           }}
                         >
-                          <span className="bg-emerald-500 text-slate-950 rounded px-1.5 py-0.5 shadow font-extrabold text-xs">
+                          <span className="bg-teal-600 text-white rounded px-1.5 py-0.5 shadow font-extrabold text-xs">
                             {val} pts
                           </span>
-                          <span className="h-3.5 w-3.5 rounded-full bg-slate-900 border-2 border-emerald-400 mt-1 shadow-md"></span>
+                          <span className="h-3.5 w-3.5 rounded-full bg-white border-2 border-teal-600 mt-1 shadow-md"></span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* X-Axis labels */}
-                  <div className="flex justify-around border-t border-slate-800 pt-3 text-slate-400 text-xs font-bold uppercase">
+                  <div className="flex justify-around border-t border-slate-800 pt-3 text-slate-500 text-xs font-bold uppercase">
                     <span className="w-1/4 text-center">1ª Evaluación<br/><span className="text-[10px] text-slate-500 font-normal">Inicial</span></span>
                     <span className="w-1/4 text-center">2ª Evaluación<br/><span className="text-[10px] text-slate-500 font-normal">Trimestre 1</span></span>
                     <span className="w-1/4 text-center">3ª Evaluación<br/><span className="text-[10px] text-slate-500 font-normal">Trimestre 2</span></span>
@@ -663,33 +663,33 @@ export default function MelaDosPage() {
             </div>
 
             {/* LOWER STATS GRID */}
-            <div className="bg-slate-950/30 border border-slate-800 rounded-xl p-6">
-              <h4 className="text-slate-200 font-bold text-lg border-b border-slate-800 pb-3">
+            <div className="bg-white border border-slate-200 rounded-xl p-6">
+              <h4 className="text-slate-900 font-bold text-lg border-b border-slate-200 pb-3">
                 Distribución Geográfica y Cobertura Activa
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
                 
                 {/* 1. Rural vs Urbana */}
-                <div className="bg-slate-900/40 p-4 border border-slate-800/80 rounded-lg">
-                  <span className="text-slate-400 text-xs font-bold uppercase tracking-wider block mb-4">
+                <div className="bg-slate-50 p-4 border border-slate-200 rounded-lg">
+                  <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-4">
                     Composición Área Geográfica
                   </span>
                   <div className="space-y-3">
                     <div>
                       <div className="flex justify-between text-xs mb-1">
-                        <span className="text-slate-300 font-semibold">Área Rural (Cañazas, Bale, Valles, Burunga)</span>
+                        <span className="text-slate-700 font-semibold">Área Rural (Cañazas, Bale, Valles, Burunga)</span>
                         <span className="font-bold">125 ({Math.round((125/150)*100)}%)</span>
                       </div>
-                      <div className="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                      <div className="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
                         <div className="bg-emerald-500 h-full" style={{ width: `${(125/150)*100}%` }}></div>
                       </div>
                     </div>
                     <div>
                       <div className="flex justify-between text-xs mb-1">
-                        <span className="text-slate-300 font-semibold">Área Urbana (Juan Díaz)</span>
+                        <span className="text-slate-700 font-semibold">Área Urbana (Juan Díaz)</span>
                         <span className="font-bold">25 ({Math.round((25/150)*100)}%)</span>
                       </div>
-                      <div className="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                      <div className="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
                         <div className="bg-blue-500 h-full" style={{ width: `${(25/150)*100}%` }}></div>
                       </div>
                     </div>
@@ -697,8 +697,8 @@ export default function MelaDosPage() {
                 </div>
 
                 {/* 2. Cobertura de Evaluaciones */}
-                <div className="bg-slate-900/40 p-4 border border-slate-800/80 rounded-lg">
-                  <span className="text-slate-400 text-xs font-bold uppercase tracking-wider block mb-4">
+                <div className="bg-slate-50 p-4 border border-slate-200 rounded-lg">
+                  <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-4">
                     Retención de Evaluación de Cohortes
                   </span>
                   <div className="space-y-2 text-xs">
@@ -712,7 +712,7 @@ export default function MelaDosPage() {
                     </div>
                     <div className="flex justify-between py-1 border-b border-slate-800/50">
                       <span className="text-slate-400">2 Evaluaciones registradas:</span>
-                      <span className="font-bold text-amber-400">{stats.completionDistribution['2 evals']} niños ({Math.round((stats.completionDistribution['2 evals']/stats.total)*100 || 0)}%)</span>
+                      <span className="font-bold text-amber-600">{stats.completionDistribution['2 evals']} niños ({Math.round((stats.completionDistribution['2 evals']/stats.total)*100 || 0)}%)</span>
                     </div>
                     <div className="flex justify-between py-1">
                       <span className="text-slate-400">1 Evaluación registrada:</span>
@@ -722,16 +722,16 @@ export default function MelaDosPage() {
                 </div>
 
                 {/* 3. Ley 285 Privacidad */}
-                <div className="bg-slate-900/40 p-4 border border-slate-800/80 rounded-lg flex flex-col justify-between">
+                <div className="bg-slate-50 p-4 border border-slate-200 rounded-lg flex flex-col justify-between">
                   <div>
-                    <span className="text-slate-400 text-xs font-bold uppercase tracking-wider block mb-2">
+                    <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-2">
                       Estatus Cumplimiento Ley 285
                     </span>
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="text-xs text-slate-600 leading-relaxed">
                       El sistema está operando bajo el patrón <strong>Online Decoupled Pattern</strong>. Las identidades reales (Nombre/Cédula) de los {stats.total} niños están cifradas y desacopladas de esta interfaz agregada en la base de datos segura.
                     </p>
                   </div>
-                  <div className="mt-2 flex items-center gap-1.5 text-xs text-emerald-400 font-bold bg-emerald-950/30 border border-emerald-900/50 px-2.5 py-1 rounded-md">
+                  <div className="mt-2 flex items-center gap-1.5 text-xs text-emerald-400 font-bold bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md">
                     <ShieldCheck className="h-4 w-4" />
                     Aislamiento PII Activo y Verificado ✓
                   </div>
@@ -745,10 +745,10 @@ export default function MelaDosPage() {
 
         {/* TAB 2: EXPLORADOR DE EVALUACIONES */}
         {activeTab === 'explorador' && (
-          <div className="bg-slate-950/40 border border-slate-800 rounded-xl shadow-md overflow-hidden animate-fadeIn">
+          <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden animate-fadeIn">
             
             {/* Header Table Info */}
-            <div className="p-6 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-slate-950/80">
+            <div className="p-6 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-slate-50">
               <div>
                 <h3 className="text-lg font-bold text-white">Listado General de Beneficiarios</h3>
                 <p className="text-xs text-slate-400 mt-0.5">Mostrando {filteredData.length} de {meladosData.length} registros filtrados</p>
@@ -767,7 +767,7 @@ export default function MelaDosPage() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition"
+                  className="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition"
                 >
                   <Download className="h-3.5 w-3.5" />
                   Exportar Filtrados (CSV)
@@ -779,7 +779,7 @@ export default function MelaDosPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-slate-800 text-slate-400 text-xs font-bold uppercase bg-slate-950/20">
+                  <tr className="border-b border-slate-200 text-slate-400 text-xs font-bold uppercase bg-slate-50">
                     <th className="py-4 px-6 w-10"></th>
                     <th className="py-4 px-6">Código ID</th>
                     <th className="py-4 px-6">Nombre Completo (Anónimo)</th>
@@ -801,7 +801,7 @@ export default function MelaDosPage() {
                         {/* Primary Row */}
                         <tr 
                           onClick={() => setExpandedStudent(isExpanded ? null : child.id)}
-                          className={`hover:bg-slate-800/30 transition cursor-pointer ${isExpanded ? 'bg-slate-800/20' : ''}`}
+                          className={`hover:bg-slate-100 transition cursor-pointer ${isExpanded ? 'bg-teal-50' : ''}`}
                         >
                           <td className="py-4 px-6 text-slate-500">
                             {isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
@@ -828,7 +828,7 @@ export default function MelaDosPage() {
                               <span className={`px-2.5 py-1 rounded-md inline-block ${
                                 latestEval.rango === 'Alto' ? 'bg-emerald-950/40 text-emerald-400 border border-emerald-900/40' :
                                 latestEval.rango === 'Normal' ? 'bg-blue-950/40 text-blue-400 border border-blue-900/40' :
-                                latestEval.rango === 'Al límite' ? 'bg-amber-950/40 text-amber-400 border border-amber-900/40' :
+                                latestEval.rango === 'Al límite' ? 'bg-amber-950/40 text-amber-600 border border-amber-900/40' :
                                 'bg-red-950/40 text-red-400 border border-red-900/40'
                               }`}>
                                 {latestEval.rango} {latestEval.rango === 'Alto' ? '🟢' : latestEval.rango === 'Normal' ? '🔵' : latestEval.rango === 'Al límite' ? '🟡' : '🔴'}
@@ -838,7 +838,7 @@ export default function MelaDosPage() {
                             )}
                           </td>
                           <td className="py-4 px-6">
-                            <span className="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded border border-slate-700 font-semibold">
+                            <span className="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded border border-slate-200 font-semibold">
                               {numEvals} / 4 trimestres
                             </span>
                           </td>
@@ -846,11 +846,11 @@ export default function MelaDosPage() {
 
                         {/* Collapsible Evaluation Details Row */}
                         {isExpanded && (
-                          <tr className="bg-slate-900/50">
+                          <tr className="bg-white">
                             <td colSpan={8} className="p-6 border-l-2 border-emerald-500">
                               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                                 <div className="md:col-span-1 space-y-2 border-r border-slate-800 pr-4">
-                                  <h5 className="text-slate-400 text-xs font-bold uppercase tracking-wider">
+                                  <h5 className="text-slate-500 text-xs font-bold uppercase tracking-wider">
                                     Información General
                                   </h5>
                                   <div className="text-xs space-y-1 text-slate-300">
@@ -861,7 +861,7 @@ export default function MelaDosPage() {
                                 </div>
 
                                 <div className="md:col-span-3 space-y-4 pl-2">
-                                  <h5 className="text-slate-400 text-xs font-bold uppercase tracking-wider">
+                                  <h5 className="text-slate-500 text-xs font-bold uppercase tracking-wider">
                                     Historial Longitudinal de Estimulación Temprana (CET)
                                   </h5>
                                   <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
@@ -869,20 +869,20 @@ export default function MelaDosPage() {
                                       const ev = child.evaluaciones.find((e: any) => e.num === num);
                                       if (!ev) {
                                         return (
-                                          <div key={num} className="bg-slate-950/20 border border-slate-800/80 p-3 rounded-lg flex flex-col justify-center items-center opacity-40">
+                                          <div key={num} className="bg-slate-100 border border-slate-200 p-3 rounded-lg flex flex-col justify-center items-center opacity-40">
                                             <span className="text-xs font-bold text-slate-500">Trimestre {num}</span>
                                             <span className="text-[10px] text-slate-600 mt-1">Sin evaluación</span>
                                           </div>
                                         );
                                       }
                                       return (
-                                        <div key={num} className="bg-slate-950/40 border border-slate-800/80 p-3 rounded-lg flex flex-col justify-between">
+                                        <div key={num} className="bg-white border border-slate-200 p-3 rounded-lg flex flex-col justify-between">
                                           <div className="flex justify-between items-center border-b border-slate-800 pb-1.5 mb-1.5">
                                             <span className="text-xs font-bold text-slate-300">Trimestre {num}</span>
                                             <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
                                               ev.rango === 'Alto' ? 'bg-emerald-950/50 text-emerald-400' :
                                               ev.rango === 'Normal' ? 'bg-blue-950/50 text-blue-400' :
-                                              ev.rango === 'Al límite' ? 'bg-amber-950/50 text-amber-400' :
+                                              ev.rango === 'Al límite' ? 'bg-amber-950/50 text-amber-600' :
                                               'bg-red-950/50 text-red-400'
                                             }`}>{ev.rango}</span>
                                           </div>
@@ -897,7 +897,7 @@ export default function MelaDosPage() {
                                   </div>
 
                                   {/* Section of comments */}
-                                  <div className="bg-slate-950/40 p-3 rounded-lg border border-slate-800 text-xs">
+                                  <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs">
                                     <span className="text-slate-400 font-bold block mb-1">Comentarios de la última evaluación:</span>
                                     <p className="text-slate-200 leading-relaxed italic">
                                       &quot;{child.evaluaciones[child.evaluaciones.length - 1]?.comentarios || 'Sin comentarios'}&quot;
@@ -916,7 +916,7 @@ export default function MelaDosPage() {
             </div>
 
             {/* Pagination Controls */}
-            <div className="p-4 px-6 border-t border-slate-800 bg-slate-950/30 flex justify-between items-center">
+            <div className="p-4 px-6 border-t border-slate-200 bg-slate-50 flex justify-between items-center">
               <span className="text-xs text-slate-400 font-medium">
                 Página {currentPage} de {totalPages} ({filteredData.length} resultados)
               </span>
@@ -924,14 +924,14 @@ export default function MelaDosPage() {
                 <button
                   disabled={currentPage === 1}
                   onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-                  className="bg-slate-800 hover:bg-slate-700 disabled:opacity-30 disabled:hover:bg-slate-800 text-slate-200 px-3 py-1 rounded text-xs font-semibold transition"
+                  className="bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:hover:bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-semibold transition"
                 >
                   Anterior
                 </button>
                 <button
                   disabled={currentPage === totalPages || totalPages === 0}
                   onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-                  className="bg-slate-800 hover:bg-slate-700 disabled:opacity-30 disabled:hover:bg-slate-800 text-slate-200 px-3 py-1 rounded text-xs font-semibold transition"
+                  className="bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:hover:bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-semibold transition"
                 >
                   Siguiente
                 </button>
@@ -944,11 +944,11 @@ export default function MelaDosPage() {
         {/* TAB 3: IMPORTADOR PRE-FLIGHT (SIMULADOR) */}
         {activeTab === 'importador' && (
           <div className="space-y-6 animate-fadeIn">
-            <div className="bg-slate-950/40 border border-slate-800 rounded-xl p-6 shadow-md">
+            <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
               <h3 className="text-xl font-bold text-white mb-2">
                 Simulador del Portal de Ingestión Pre-Flight 🚀
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              <p className="text-slate-500 text-sm leading-relaxed mb-6">
                 Este panel simula cómo operará el módulo de ingesta propuesto. En lugar de procesar a ciegas hojas de cálculo contaminadas o con errores como hace Excel, el importador pre-valida el esquema, analiza la coherencia de datos de las estimuladoras en tiempo real, subsana desplazamientos comunes en caliente y divide las identidades personales de los menores según lo estipulado por la Ley 285.
               </p>
 
@@ -958,14 +958,14 @@ export default function MelaDosPage() {
                   onClick={startSimulation}
                   className="border-2 border-dashed border-slate-700 hover:border-emerald-500 hover:bg-emerald-950/10 cursor-pointer rounded-xl p-12 flex flex-col items-center justify-center gap-4 transition group"
                 >
-                  <div className="bg-slate-800 group-hover:bg-emerald-950 text-slate-400 group-hover:text-emerald-400 p-4 rounded-full transition shadow-md">
+                  <div className="bg-slate-100 group-hover:bg-teal-50 text-slate-500 group-hover:text-teal-600 p-4 rounded-full transition shadow-md">
                     <UploadCloud className="h-10 w-10" />
                   </div>
                   <div className="text-center">
                     <p className="text-white font-bold text-lg">Arrastra tu planilla de consolidación Excel aquí</p>
                     <p className="text-slate-500 text-xs mt-1">Soporta formatos .xlsx y .csv de Proyecto MelaDos (Tamaño máx: 15MB)</p>
                   </div>
-                  <button className="bg-slate-800 group-hover:bg-emerald-600 text-white font-semibold text-xs px-4 py-2 rounded-lg shadow transition">
+                  <button className="bg-teal-600 group-hover:bg-teal-700 text-white font-semibold text-xs px-4 py-2 rounded-lg shadow transition">
                     Seleccionar Archivo de mi Computador
                   </button>
                 </div>
@@ -973,7 +973,7 @@ export default function MelaDosPage() {
 
               {/* Progress Bar during simulation */}
               {isSimulating && (
-                <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div className="bg-white border border-slate-200 rounded-xl p-6 space-y-4">
                   <div className="flex justify-between items-center text-sm font-bold">
                     <span className="flex items-center gap-2 text-emerald-400">
                       <RefreshCw className="h-4 w-4 animate-spin" />
@@ -981,7 +981,7 @@ export default function MelaDosPage() {
                     </span>
                     <span>{simulationProgress}%</span>
                   </div>
-                  <div className="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+                  <div className="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
                     <div className="bg-emerald-500 h-full rounded-full transition-all duration-300" style={{ width: `${simulationProgress}%` }}></div>
                   </div>
                 </div>
@@ -1004,7 +1004,7 @@ export default function MelaDosPage() {
                       setSimulationFinished(false);
                       setSimulationLogs([]);
                     }}
-                    className="bg-slate-800 hover:bg-slate-700 text-slate-100 text-xs font-bold px-4 py-2 rounded-lg transition"
+                    className="bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition"
                   >
                     Cargar Otro Archivo
                   </button>
@@ -1014,9 +1014,9 @@ export default function MelaDosPage() {
 
             {/* LOGS PANEL */}
             {simulationLogs.length > 0 && (
-              <div className="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden shadow-lg">
-                <div className="bg-slate-900 px-6 py-3 border-b border-slate-800 flex justify-between items-center">
-                  <span className="text-slate-300 text-xs font-bold uppercase tracking-wider">
+              <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                <div className="bg-slate-50 px-6 py-3 border-b border-slate-200 flex justify-between items-center">
+                  <span className="text-slate-600 text-xs font-bold uppercase tracking-wider">
                     Log del Servidor de Ingesta (Pre-flight Engine Logs)
                   </span>
                   <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -1027,7 +1027,7 @@ export default function MelaDosPage() {
                       key={index} 
                       className={`py-1.5 border-b border-slate-900/40 flex items-start gap-2.5 leading-relaxed ${
                         log.type === 'error' ? 'text-red-400' : 
-                        log.type === 'warn' ? 'text-amber-400' : 
+                        log.type === 'warn' ? 'text-amber-600' : 
                         log.type === 'success' ? 'text-emerald-400' : 
                         'text-slate-300'
                       }`}
@@ -1046,7 +1046,7 @@ export default function MelaDosPage() {
         {activeTab === 'docs' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fadeIn">
             {/* Audit Section */}
-            <div className="bg-slate-950/40 border border-slate-800 rounded-xl p-8 space-y-6 shadow-md prose prose-invert max-w-none">
+            <div className="bg-white border border-slate-200 rounded-xl p-8 space-y-6 shadow-sm prose max-w-none">
               <div className="flex items-center gap-2 text-emerald-400 border-b border-slate-800 pb-3">
                 <AlertTriangle className="h-6 w-6" />
                 <h3 className="text-xl font-bold text-white m-0">Informe de Auditoría Excel</h3>
@@ -1055,12 +1055,12 @@ export default function MelaDosPage() {
               <div className="space-y-4 text-slate-300 text-sm leading-relaxed">
                 <h4 className="text-slate-200 font-bold text-md mt-4">1. Pérdida Absoluta de Integridad por Fórmulas</h4>
                 <p>
-                  El modelo actual de consolidación en Excel depende de macros y enlaces dinámicos inter-libros que generan errores <code className="bg-slate-900 text-amber-400 px-1 py-0.5 rounded font-mono">#REF!</code> catastróficos. Al mover el archivo del sistema local del usuario que los creó, la pestaña consolidada pierde de inmediato la capacidad de recalcular métricas críticas de niños activos.
+                  El modelo actual de consolidación en Excel depende de macros y enlaces dinámicos inter-libros que generan errores <code className="bg-amber-50 text-amber-800 px-1 py-0.5 rounded font-mono border border-amber-200">#REF!</code> catastróficos. Al mover el archivo del sistema local del usuario que los creó, la pestaña consolidada pierde de inmediato la capacidad de recalcular métricas críticas de niños activos.
                 </p>
 
                 <h4 className="text-slate-200 font-bold text-md mt-4">2. Contaminación de Datos Cualitativos</h4>
                 <p>
-                  A falta de validación en los campos, las columnas cualitativas de 2da y 3ra evaluación están contaminadas con enteros seriales de fechas como <code className="bg-slate-900 text-slate-400 px-1 py-0.5 rounded font-mono">44804</code> o puntajes numéricos brutos. Esto se debe al desplazamiento horizontal accidental de columnas al hacer copiar y pegar masivamente en Excel, lo cual es indetectable para los usuarios no técnicos hasta que corrompe los informes históricos.
+                  A falta de validación en los campos, las columnas cualitativas de 2da y 3ra evaluación están contaminadas con enteros seriales de fechas como <code className="bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-300">44804</code> o puntajes numéricos brutos. Esto se debe al desplazamiento horizontal accidental de columnas al hacer copiar y pegar masivamente en Excel, lo cual es indetectable para los usuarios no técnicos hasta que corrompe los informes históricos.
                 </p>
 
                 <h4 className="text-slate-200 font-bold text-md mt-4">3. Incumplimiento de la Ley 285 de Panamá</h4>
@@ -1071,7 +1071,7 @@ export default function MelaDosPage() {
             </div>
 
             {/* Proposed Solution Section */}
-            <div className="bg-slate-950/40 border border-slate-800 rounded-xl p-8 space-y-6 shadow-md prose prose-invert max-w-none">
+            <div className="bg-white border border-slate-200 rounded-xl p-8 space-y-6 shadow-sm prose max-w-none">
               <div className="flex items-center gap-2 text-emerald-400 border-b border-slate-800 pb-3">
                 <ShieldCheck className="h-6 w-6" />
                 <h3 className="text-xl font-bold text-white m-0">Propuesta de Arquitectura</h3>
@@ -1085,7 +1085,7 @@ export default function MelaDosPage() {
 
                 <h4 className="text-slate-200 font-bold text-md mt-4">2. Desacoplamiento de PII (Patrón Decoupled)</h4>
                 <p>
-                  Separar físicamente los nombres y las cédulas de las evaluaciones. El rendimiento de estimulación se asocia estrictamente a un código de cohorte anónimo (ej: <code className="bg-slate-900 text-slate-400 px-1 py-0.5 rounded font-mono">MEL-2026-001</code>). El enlace a los nombres reales vive en una tabla independiente restringida por tokens y roles (RBAC) exclusiva para Melanie.
+                  Separar físicamente los nombres y las cédulas de las evaluaciones. El rendimiento de estimulación se asocia estrictamente a un código de cohorte anónimo (ej: <code className="bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-300">MEL-2026-001</code>). El enlace a los nombres reales vive en una tabla independiente restringida por tokens y roles (RBAC) exclusiva para Melanie.
                 </p>
 
                 <h4 className="text-slate-200 font-bold text-md mt-4">3. Alojamiento Desplegado con Coolify</h4>
@@ -1100,9 +1100,9 @@ export default function MelaDosPage() {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-slate-950 border-t border-slate-800 py-6 px-8 mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-slate-500 gap-4">
+      <footer className="bg-slate-50 border-t border-slate-200 py-6 px-8 mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-slate-500 gap-4">
         <div>
-          <span>© 2026 Plus Tech. Diseñado con ❤️ para la Asociación Proyecto MelaDos Panameña.</span>
+          <span>© 2026 One Clik To Go. Diseñado con ❤️ para la Asociación Proyecto MelaDos Panameña.</span>
         </div>
         <div className="flex gap-4">
           <span>Licencia: Comercial / Restringido</span>
